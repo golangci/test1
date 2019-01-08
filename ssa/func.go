@@ -1,6 +1,6 @@
 package ssa
 
-func Panics(instr interface{}, v int) {
+func SomeFunc(instr interface{}, v int) {
     switch instr.(type) {
     case Value:
       instr.(interface {
@@ -9,13 +9,3 @@ func Panics(instr interface{}, v int) {
     }
 }
 
-type setNumable interface {
-  setNum(int)
-}
-
-func DoesNotPanic(instr interface{}, v int) {
-    switch instr.(type) {
-    case Value:
-      instr.(setNumable).setNum(v)
-    }
-}
